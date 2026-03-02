@@ -30,8 +30,8 @@ Dieses Repository enthält mein persönliches Web-Portfolio.
 
 ## 📧 Kontakt
 - GitHub: [eboekenh](https://github.com/eboekenh)
-- Email: [your-email]
-- LinkedIn: [your-linkedin]
+- Email: ecemboekenheide@gmail.com
+- LinkedIn:https://www.linkedin.com/in/ecemboekenheide
 
 ## 📄 Lizenz
 MIT
