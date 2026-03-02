@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecem Bökenheide | AI & Digital Transformation Engineer</title>
+    <style>
+        :root {
+            --color-bg-primary: #f8f9fa;
+            --color-bg-secondary: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #6c757d;
+            --color-accent: #2196F3;
+            --color-accent-hover: #1976D2;
+            --color-border: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-accent);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--color-accent);
+            color: #ffffff;
+            border-color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-accent), #64B5F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .description {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: #ffffff;
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .about-text p {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: var(--color-bg-card);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            border: 1px solid var(--color-border);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(33, 150, 243, 0.15);
+            border-color: var(--color-accent);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--color-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--color-accent);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-text-primary);
+        }
+
+        .project-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: var(--color-bg-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--color-accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .placeholder-card {
+            background: var(--color-bg-card);
+            border: 2px dashed var(--color-border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .placeholder-card h3 {
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.4rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 3px solid var(--color-bg-primary);
+            box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+        }
+
+        .timeline-content {
+            background: var(--color-bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-header h3 {
+            font-size: 1.3rem;
+            color: var(--color-accent);
+        }
+
+        .timeline-date {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-company {
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 180px;
+            background: var(--color-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 2.5rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-text-primary);
+        }
+
+        .blog-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            text-decoration: none;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-bg-secondary);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        footer p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-bg-secondary);
+                flex-direction: column;
+                padding: 2rem;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .nav-links.active {
+                display: flex;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        /* Hidden language content */
+        [data-lang]:not([data-lang="en"]) {
+            display: none;
+        }
+
+        body[data-active-lang="de"] [data-lang="en"] {
+            display: none;
+        }
+
+        body[data-active-lang="de"] [data-lang="de"] {
+            display: block;
+        }
+
+        body[data-active-lang="en"] [data-lang="en"] {
+            display: block;
+        }
+
+        body[data-active-lang="en"] [data-lang="de"] {
+            display: none;
+        }
+    </style>
+</head>
+<body data-active-lang="en">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">EB</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-lang="en">Home</a></li>
+                <li><a href="#home" class="nav-link active" data-lang="de">Startseite</a></li>
+                
+                <li><a href="#about" class="nav-link" data-lang="en">About</a></li>
+                <li><a href="#about" class="nav-link" data-lang="de">Über mich</a></li>
+                
+                <li><a href="#projects" class="nav-link" data-lang="en">Projects</a></li>
+                <li><a href="#projects" class="nav-link" data-lang="de">Projekte</a></li>
+                
+                <li><a href="#experience" class="nav-link" data-lang="en">Experience</a></li>
+                <li><a href="#experience" class="nav-link" data-lang="de">Erfahrung</a></li>
+                
+                <li><a href="#blog" class="nav-link" data-lang="en">Blog</a></li>
+                <li><a href="#blog" class="nav-link" data-lang="de">Blog</a></li>
+                
+                <li><a href="#contact" class="nav-link" data-lang="en">Contact</a></li>
+                <li><a href="#contact" class="nav-link" data-lang="de">Kontakt</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang-btn="en">EN</button>
+                <button class="lang-btn" data-lang-btn="de">DE</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-lang="en">Ecem Bökenheide</h1>
+            <h1 data-lang="de">Ecem Bökenheide</h1>
+            
+            <p class="subtitle" data-lang="en">AI &amp; Digital Transformation Engineer</p>
+            <p class="subtitle" data-lang="de">KI- &amp; Digitalisierungs-Ingenieurin</p>
+            
+            <p class="description" data-lang="en">
+                Engineering-minded AI specialist with a strong analytical background and digital mindset. 
+                Experienced in analyzing operational and strategic challenges, translating requirements into 
+                prioritized tasks and AI-powered solutions with measurable impact.
+            </p>
+            <p class="description" data-lang="de">
+                KI- und digitalisierungsorientierte Ingenieurin mit starkem analytischen Hintergrund und 
+                ausgeprägter digitaler Denkweise. Versiert in der Analyse operativer und strategischer 
+                Herausforderungen sowie in der strukturierten Übersetzung von Anforderungen in priorisierte 
+                Aufgaben und KI-gestützte Lösungen mit messbarer Wirkung.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary" data-lang="en">View Projects</a>
+                <a href="#projects" class="btn btn-primary" data-lang="de">Projekte ansehen</a>
+                
+                <a href="#contact" class="btn btn-secondary" data-lang="en">Get in Touch</a>
+                <a href="#contact" class="btn btn-secondary" data-lang="de">Kontakt aufnehmen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2 data-lang="en">About Me</h2>
+            <h2 data-lang="de">Über mich</h2>
+            
+            <p data-lang="en">Passionate about driving innovation through AI and digital transformation</p>
+            <p data-lang="de">Leidenschaftlich daran interessiert, Innovation durch KI und digitale Transformation voranzutreiben</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-lang="en">Engineering Innovation</h3>
+                <h3 data-lang="de">Engineering Innovation</h3>
+                
+                <p data-lang="en">
+                    With a Master's degree in Process, Energy, and Environmental Engineering from TU Berlin and a Bachelor's 
+                    in Chemical Engineering from METU, I bring a unique blend of engineering rigor and digital innovation to 
+                    every project. My journey has taken me from automotive systems engineering to the exciting world of AI and 
+                    digital transformation.
+                </p>
+                <p data-lang="de">
+                    Mit einem Master-Abschluss in Prozess-, Energie- und Umwelttechnik von der TU Berlin und einem Bachelor 
+                    in Chemieingenieurwesen von der METU bringe ich eine einzigartige Mischung aus technischer Präzision und 
+                    digitaler Innovation in jedes Projekt ein. Meine Reise führte mich von der Automobilsystementwicklung zur 
+                    spannenden Welt der KI und digitalen Transformation.
+                </p>
+                
+                <p data-lang="en">
+                    Currently, I focus on evaluating AI tools, developing automation solutions, and mentoring data science 
+                    projects at ReDI School of Digital Integration. I'm passionate about translating complex technical 
+                    challenges into practical, AI-powered solutions that create measurable business value.
+                </p>
+                <p data-lang="de">
+                    Derzeit konzentriere ich mich auf die Evaluation von KI-Tools, die Entwicklung von Automatisierungslösungen 
+                    und die Betreuung von Data-Science-Projekten bei der ReDI School of Digital Integration. Ich bin 
+                    leidenschaftlich daran interessiert, komplexe technische Herausforderungen in praktische, KI-gestützte 
+                    Lösungen umzusetzen, die messbaren geschäftlichen Wert schaffen.
+                </p>
+
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">AI Tools</span>
+                    <span class="skill-tag">Process Automation</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">MATLAB/Simulink</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Agile Methods</span>
+                    <span class="skill-tag">No-Code/Low-Code</span>
+                    <span class="skill-tag">GitHub</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- Placeholder for profile image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <h2 data-lang="en">Featured Projects</h2>
+            <h2 data-lang="de">Ausgewählte Projekte</h2>
+            
+            <p data-lang="en">A showcase of my work in AI, automation, and web development</p>
+            <p data-lang="de">Eine Auswahl meiner Arbeiten in KI, Automatisierung und Webentwicklung</p>
+        </div>
+        <div class="projects-grid">
+            <!-- Project 1: Career Journey Support -->
+            <div class="project-card">
+                <div class="project-image">🎯</div>
+                <div class="project-content">
+                    <h3 data-lang="en">Career Journey Support</h3>
+                    <h3 data-lang="de">Karrierebegleitung-App</h3>
+                    
+                    <p data-lang="en">
+                        AI-powered web application for structured job application tracking. Features gamification, 
+                        reflection modules, and progress tracking to support sustainable career development.
+                    </p>
+                    <p data-lang="de">
+                        KI-gestützte Webanwendung zur strukturierten Begleitung von Bewerbungsprozessen. Mit 
+                        spielerischen Elementen, Reflexionsmodulen und Fortschrittsverfolgung für nachhaltige 
+                        Karriereentwicklung.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">AI Integration</span>
+                        <span class="project-tag">Netlify</span>
+                        <span class="project-tag">Low-Code</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://careerjourneysupport.netlify.app/" target="_blank" class="project-link" data-lang="en">View Live →</a>
+                        <a href="https://careerjourneysupport.netlify.app/" target="_blank" class="project-link" data-lang="de">Live ansehen →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: TaskmatoFlow -->
+            <div class="project-card">
+                <div class="project-image">✅</div>
+                <div class="project-content">
+                    <h3>TaskmatoFlow</h3>
+                    
+                    <p data-lang="en">
+                        Intelligent task management system combining productivity tracking with smart workflows. 
+                        Designed to help users prioritize and organize tasks efficiently.
+                    </p>
+                    <p data-lang="de">
+                        Intelligentes Aufgabenverwaltungssystem, das Produktivitätsverfolgung mit smarten Workflows 
+                        kombiniert. Entwickelt, um Benutzern bei der effizienten Priorisierung und Organisation zu helfen.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Workflow Automation</span>
+                        <span class="project-tag">Netlify</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://taskmatoflow.netlify.app/" target="_blank" class="project-link" data-lang="en">View Live →</a>
+                        <a href="https://taskmatoflow.netlify.app/" target="_blank" class="project-link" data-lang="de">Live ansehen →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Idea Spark -->
+            <div class="project-card">
+                <div class="project-image">💡</div>
+                <div class="project-content">
+                    <h3>Idea Spark</h3>
+                    
+                    <p data-lang="en">
+                        Creative ideation tool leveraging AI to generate and refine project concepts. Built with 
+                        Replit for rapid prototyping and deployment.
+                    </p>
+                    <p data-lang="de">
+                        Kreatives Ideenfindungs-Tool, das KI nutzt, um Projektkonzepte zu generieren und zu verfeinern. 
+                        Mit Replit für schnelles Prototyping und Deployment entwickelt.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">AI/GPT</span>
+                        <span class="project-tag">Replit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://idea-spark-eboekenh.replit.app/" target="_blank" class="project-link" data-lang="en">View Live →</a>
+                        <a href="https://idea-spark-eboekenh.replit.app/" target="_blank" class="project-link" data-lang="de">Live ansehen →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Water Pump Prediction -->
+            <div class="project-card">
+                <div class="project-image">🔧</div>
+                <div class="project-content">
+                    <h3 data-lang="en">Water Pump Status Prediction</h3>
+                    <h3 data-lang="de">Wasserpumpen-Status Vorhersage</h3>
+                    
+                    <p data-lang="en">
+                        Multi-class classification ML model predicting pump operational status using 59,400 data points. 
+                        Achieved 77.75% accuracy with comprehensive feature engineering and model comparison.
+                    </p>
+                    <p data-lang="de">
+                        Multi-Klassen-Klassifikationsmodell zur Vorhersage des Pumpenstatus unter Verwendung von 59.400 
+                        Datensätzen. Erreichte 77,75% Genauigkeit mit umfassendem Feature Engineering und Modellvergleich.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">ML</span>
+                        <span class="project-tag">Streamlit</span>
+                        <span class="project-tag">XGBoost</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/" target="_blank" class="project-link" data-lang="en">View on GitHub →</a>
+                        <a href="https://github.com/" target="_blank" class="project-link" data-lang="de">Auf GitHub ansehen →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder Projects -->
+            <div class="placeholder-card">
+                <div class="project-image" style="font-size: 2rem;">📁</div>
+                <h3 data-lang="en">New Project Coming Soon</h3>
+                <h3 data-lang="de">Neues Projekt folgt bald</h3>
+                
+                <p data-lang="en">Stay tuned for upcoming innovations</p>
+                <p data-lang="de">Bleiben Sie gespannt auf kommende Innovationen</p>
+            </div>
+
+            <div class="placeholder-card">
+                <div class="project-image" style="font-size: 2rem;">📁</div>
+                <h3 data-lang="en">New Project Coming Soon</h3>
+                <h3 data-lang="de">Neues Projekt folgt bald</h3>
+                
+                <p data-lang="en">Stay tuned for upcoming innovations</p>
+                <p data-lang="de">Bleiben Sie gespannt auf kommende Innovationen</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <h2 data-lang="en">Professional Experience</h2>
+            <h2 data-lang="de">Berufserfahrung</h2>
+            
+            <p data-lang="en">My journey through engineering, AI, and digital transformation</p>
+            <p data-lang="de">Meine Reise durch Engineering, KI und digitale Transformation</p>
+        </div>
+        <div class="timeline">
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 data-lang="en">AI &amp; Digital Transformation</h3>
+                            <h3 data-lang="de">KI &amp; Digitale Transformation</h3>
+                            
+                            <p class="timeline-company" data-lang="en">Professional Development · Berlin</p>
+                            <p class="timeline-company" data-lang="de">Berufliche Weiterbildung · Berlin</p>
+                        </div>
+                        <span class="timeline-date" data-lang="en">Jan 2025 - Present</span>
+                        <span class="timeline-date" data-lang="de">Jan 2025 - Heute</span>
+                    </div>
+                    <ul data-lang="en">
+                        <li>Designed AI-powered web applications for structured career journey optimization</li>
+                        <li>Developed structured prompt frameworks to improve consistency and decision quality</li>
+                        <li>Evaluated AI tools for business applicability and automation potential</li>
+                        <li>Mentored data analysis and data science projects at ReDI School</li>
+                        <li>Applied Python, ML, and No-Code/Low-Code automation in practical projects</li>
+                    </ul>
+                    <ul data-lang="de">
+                        <li>Entwickelte KI-gestützte Webanwendungen zur strukturierten Karriereoptimierung</li>
+                        <li>Erstellte strukturierte Prompt-Frameworks zur Verbesserung der Konsistenz und Entscheidungsqualität</li>
+                        <li>Evaluierte KI-Tools hinsichtlich geschäftlicher Anwendbarkeit und Automatisierungspotenzial</li>
+                        <li>Betreute Datenanalyse- und Data-Science-Projekte bei der ReDI School</li>
+                        <li>Wendete Python, ML und No-Code/Low-Code-Automatisierung in praktischen Projekten an</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 data-lang="en">Systems Engineer &amp; Test Coordinator</h3>
+                            <h3 data-lang="de">Systemingenieurin &amp; Testkoordinatorin</h3>
+                            
+                            <p class="timeline-company">Expleo Group · Berlin</p>
+                        </div>
+                        <span class="timeline-date" data-lang="en">Aug 2023 - Aug 2024</span>
+                        <span class="timeline-date" data-lang="de">Aug 2023 - Aug 2024</span>
+                    </div>
+                    <ul data-lang="en">
+                        <li>Coordinated international 6-person team in short release cycles using Kanban/Scrum</li>
+                        <li>Analyzed end-to-end workflows and identified automation opportunities</li>
+                        <li>Developed Python automation solutions reducing weekly workload by 40%</li>
+                        <li>Evaluated AI tools (ChatGPT, Gemini) for suitability and operational value</li>
+                        <li>Established automated reporting processes for cross-functional teams</li>
+                    </ul>
+                    <ul data-lang="de">
+                        <li>Koordinierte internationales 6-köpfiges Team in kurzen Release-Zyklen mit Kanban/Scrum</li>
+                        <li>Analysierte End-to-End-Workflows und identifizierte Automatisierungspotenziale</li>
+                        <li>Entwickelte Python-Automatisierungslösungen und reduzierte wöchentlichen Aufwand um 40%</li>
+                        <li>Evaluierte KI-Tools (ChatGPT, Gemini) hinsichtlich Eignung und operativem Mehrwert</li>
+                        <li>Etablierte automatisierte Reporting-Prozesse für funktionsübergreifende Teams</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 data-lang="en">Systems Engineer</h3>
+                            <h3 data-lang="de">Systemingenieurin</h3>
+                            
+                            <p class="timeline-company">Expleo Group · Berlin</p>
+                        </div>
+                        <span class="timeline-date" data-lang="en">Sep 2019 - Aug 2023</span>
+                        <span class="timeline-date" data-lang="de">Sep 2019 - Aug 2023</span>
+                    </div>
+                    <ul data-lang="en">
+                        <li>Modeled and simulated e-mobility components using MATLAB/Simulink</li>
+                        <li>Conducted model-based testing and validation for quality assurance</li>
+                        <li>Created data-driven analyses to support technical decision-making</li>
+                        <li>Developed Python scripts for analysis and reporting automation</li>
+                    </ul>
+                    <ul data-lang="de">
+                        <li>Modellierte und simulierte E-Mobilitätskomponenten mit MATLAB/Simulink</li>
+                        <li>Führte modellbasierte Tests und Validierungen zur Qualitätssicherung durch</li>
+                        <li>Erstellte datengetriebene Analysen zur Unterstützung technischer Entscheidungsfindung</li>
+                        <li>Entwickelte Python-Skripte zur Automatisierung von Analyse- und Reporting-Prozessen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 data-lang="en">Master's Thesis Research</h3>
+                            <h3 data-lang="de">Masterarbeit Forschung</h3>
+                            
+                            <p class="timeline-company">IAV GmbH · Berlin</p>
+                        </div>
+                        <span class="timeline-date" data-lang="en">Apr 2018 - Jan 2019</span>
+                        <span class="timeline-date" data-lang="de">Apr 2018 - Jan 2019</span>
+                    </div>
+                    <ul data-lang="en">
+                        <li>Researched SCR exhaust aftertreatment systems</li>
+                        <li>Validated and optimized simulation models using real measurement data</li>
+                        <li>Significantly improved model quality in NH3 behavior</li>
+                    </ul>
+                    <ul data-lang="de">
+                        <li>Forschte an SCR-Abgasnachbehandlungssystemen</li>
+                        <li>Validierte und optimierte Simulationsmodelle anhand realer Messdaten</li>
+                        <li>Verbesserte die Modellgüte im NH3-Verhalten deutlich</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="section-header">
+            <h2 data-lang="en">Blog &amp; Insights</h2>
+            <h2 data-lang="de">Blog &amp; Einblicke</h2>
+            
+            <p data-lang="en">Thoughts on AI, automation, and digital transformation</p>
+            <p data-lang="de">Gedanken zu KI, Automatisierung und digitaler Transformation</p>
+        </div>
+        <div class="blog-grid">
+            <!-- Blog Placeholder 1 -->
+            <div class="blog-card">
+                <div class="blog-image">📝</div>
+                <div class="blog-content">
+                    <p class="blog-date" data-lang="en">Coming Soon</p>
+                    <p class="blog-date" data-lang="de">Demnächst</p>
+                    
+                    <h3 data-lang="en">AI in Workflow Automation</h3>
+                    <h3 data-lang="de">KI in der Workflow-Automatisierung</h3>
+                    
+                    <p data-lang="en">
+                        Exploring practical applications of AI for process optimization and efficiency gains.
+                    </p>
+                    <p data-lang="de">
+                        Praktische Anwendungen von KI für Prozessoptimierung und Effizienzsteigerung erkunden.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Blog Placeholder 2 -->
+            <div class="blog-card">
+                <div class="blog-image">🤖</div>
+                <div class="blog-content">
+                    <p class="blog-date" data-lang="en">Coming Soon</p>
+                    <p class="blog-date" data-lang="de">Demnächst</p>
+                    
+                    <h3 data-lang="en">From Engineering to AI</h3>
+                    <h3 data-lang="de">Von Engineering zu KI</h3>
+                    
+                    <p data-lang="en">
+                        My journey transitioning from traditional engineering to AI and digital transformation.
+                    </p>
+                    <p data-lang="de">
+                        Meine Reise vom traditionellen Engineering zu KI und digitaler Transformation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Blog Placeholder 3 -->
+            <div class="blog-card">
+                <div class="blog-image">💻</div>
+                <div class="blog-content">
+                    <p class="blog-date" data-lang="en">Coming Soon</p>
+                    <p class="blog-date" data-lang="de">Demnächst</p>
+                    
+                    <h3 data-lang="en">Low-Code Tools for Rapid Prototyping</h3>
+                    <h3 data-lang="de">Low-Code-Tools für schnelles Prototyping</h3>
+                    
+                    <p data-lang="en">
+                        How no-code/low-code platforms accelerate idea validation and MVP development.
+                    </p>
+                    <p data-lang="de">
+                        Wie No-Code/Low-Code-Plattformen Ideenvalidierung und MVP-Entwicklung beschleunigen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2 data-lang="en">Get In Touch</h2>
+            <h2 data-lang="de">Kontakt aufnehmen</h2>
+            
+            <p data-lang="en">Let's collaborate on innovative AI and digital transformation projects</p>
+            <p data-lang="de">Lassen Sie uns an innovativen KI- und Digitalisierungsprojekten zusammenarbeiten</p>
+        </div>
+        <div class="contact-content">
+            <p data-lang="en">
+                I'm always interested in discussing new opportunities, collaborations, and innovative projects. 
+                Whether you're looking for expertise in AI implementation, process automation, or digital transformation 
+                consulting, feel free to reach out!
+            </p>
+            <p data-lang="de">
+                Ich bin immer daran interessiert, neue Möglichkeiten, Kooperationen und innovative Projekte zu besprechen. 
+                Egal, ob Sie Expertise in KI-Implementierung, Prozessautomatisierung oder Digitalisierungsberatung suchen, 
+                melden Sie sich gerne!
+            </p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <a href="mailto:ecemboekenheide@gmail.com">ecemboekenheide@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <p data-lang="en">Berlin, Germany</p>
+                    <p data-lang="de">Berlin, Deutschland</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <a href="tel:+4917621785347">+49 176 21785347</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/ecemboekenheide" target="_blank" class="social-link" title="LinkedIn">💼</a>
+                <a href="https://github.com/" target="_blank" class="social-link" title="GitHub">🐙</a>
+                <a href="mailto:ecemboekenheide@gmail.com" class="social-link" title="Email">✉️</a>
+            </div>
+
+            <div class="cta-buttons" style="margin-top: 3rem;">
+                <a href="DE-AI-Berater2702_1809-Copy.pdf" download class="btn btn-primary" data-lang="en">Download CV</a>
+                <a href="DE-AI-Berater2702_1809-Copy.pdf" download class="btn btn-primary" data-lang="de">Lebenslauf herunterladen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-lang="en">&copy; 2026 Ecem Bökenheide. Designed &amp; built with passion for innovation.</p>
+        <p data-lang="de">&copy; 2026 Ecem Bökenheide. Mit Leidenschaft für Innovation designed &amp; entwickelt.</p>
+    </footer>
+
+    <script>
+        // Language Switching
+        const body = document.body;
+        const langButtons = document.querySelectorAll('.lang-btn');
+        
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang-btn');
+                
+                // Update active language
+                body.setAttribute('data-active-lang', lang);
+                
+                // Update button states
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Store preference
+                localStorage.setItem('preferredLang', lang);
+            });
+        });
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang) {
+            body.setAttribute('data-active-lang', savedLang);
+            langButtons.forEach(btn => {
+                if (btn.getAttribute('data-lang-btn') === savedLang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section');
+        const navLinkElements = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinkElements.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.project-card, .timeline-item, .blog-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
